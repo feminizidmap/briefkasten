@@ -1,7 +1,8 @@
-require "erb"
+require 'erb'
 require 'sanitize'
 require 'sinatra'
 require 'sinatra/base'
+require 'sinatra/cors'
 require 'sinatra/r18n'
 require 'mail'
 
@@ -17,7 +18,11 @@ end
 
 class App < Sinatra::Base
   register Sinatra::R18n
+  register Sinatra::Cors
   set :root, __dir__
+  set :allow_origin, "#{ENV['ALLOW_LIST']}"
+  set :allow_methods, "GET,HEAD,POST"
+  set :allow_headers, "content-type"
   helpers ApplicationHelper
 
   get '/' do
@@ -29,7 +34,7 @@ class App < Sinatra::Base
   end
 
   post '/send' do
-    #puts params
+    puts params
     name = Sanitize.fragment(params[:name], Sanitize::Config::RELAXED)
 
     email_body = erb :mailer, locals: {name: name}
@@ -40,7 +45,7 @@ class App < Sinatra::Base
       body    email_body
     end
     mail.delivery_method :sendmail
-    mail.deliver!
+    #mail.deliver!
 
     redirect back
   end
