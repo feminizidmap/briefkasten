@@ -3,6 +3,7 @@ require 'sanitize'
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/r18n'
+require 'mail'
 
 require './helpers/application_helper'
 
@@ -28,14 +29,15 @@ class App < Sinatra::Base
   end
 
   post '/send' do
-    puts params
+    #puts params
     name = Sanitize.fragment(params[:name], Sanitize::Config::RELAXED)
 
+    email_body = erb :mailer, locals: {name: name}
     mail = Mail.new do
-      from    ENV['EMAIL_TO']
-      to      ENV['EMAIL_FROM']
-      subject '[Briefkasten] You got mail!'
-      body    "#{name} says hi"
+      from    "#{ENV['EMAIL_FROM']}"
+      to      "#{ENV['EMAIL_TO']}"
+      subject "[#{ENV['APP_NAME']}] You got mail!"
+      body    email_body
     end
     mail.delivery_method :sendmail
     mail.deliver!
