@@ -12,3 +12,11 @@ Edit the values in the .env and then `source .env`. Install dependencies and sta
 ``` bash
 $ bundle install && bundle exec thin start
 ```
+
+## Docker
+
+There is a Dockerfile you can use, a potential docker-compose.yml could look like this
+
+``` yaml
+
+```

@@ -45,7 +45,7 @@ class App < Sinatra::Base
       body    email_body
     end
     mail.delivery_method :sendmail
-    #mail.deliver!
+    mail.deliver!
 
     redirect back
   end

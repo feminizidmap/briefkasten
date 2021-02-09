@@ -1,6 +1,6 @@
 FROM ruby:3.0-slim-buster
 
-RUN apt-get update -qq && apt-get install -y sendmail
+RUN apt-get update -qq && apt-get install -y sendmail git build-essential
 
 ENV APP_ROOT /var/www/briefkasten
 RUN mkdir -p $APP_ROOT
