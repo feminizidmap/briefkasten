@@ -1,0 +1,4 @@
+form:
+  labels:
+    name: Full name
+    submit: Send
