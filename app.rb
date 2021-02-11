@@ -1,10 +1,11 @@
 require 'erb'
+require 'logger'
+require 'mail'
 require 'sanitize'
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/cors'
 require 'sinatra/r18n'
-require 'mail'
 
 require './helpers/application_helper'
 
@@ -24,6 +25,7 @@ class App < Sinatra::Base
   set :allow_methods, "GET,HEAD,POST"
   set :allow_headers, "content-type"
   helpers ApplicationHelper
+  log = Logger.new('logs/log.txt', 'monthly')
 
   get '/' do
     redirect to '/de'
@@ -34,18 +36,23 @@ class App < Sinatra::Base
   end
 
   post '/send' do
-    puts params
+    log.info "Request hit /send"
     name = Sanitize.fragment(params[:name], Sanitize::Config::RELAXED)
 
-    email_body = erb :mailer, locals: {name: name}
-    mail = Mail.new do
-      from    "#{ENV['EMAIL_FROM']}"
-      to      "#{ENV['EMAIL_TO']}"
-      subject "[#{ENV['APP_NAME']}] You got mail!"
-      body    email_body
-    end
-    mail.delivery_method :sendmail
-    mail.deliver!
+    Thread.abort_on_exception = true
+    Thread.new  {
+      log.info "Starting thread to write email"
+      email_body = erb :mailer, locals: {name: name}
+      mail = Mail.new do
+        from    "#{ENV['EMAIL_FROM']}"
+        to      "#{ENV['EMAIL_TO']}"
+        subject "[#{ENV['APP_NAME']}] You got mail!"
+        body    email_body
+      end
+      mail.delivery_method :sendmail
+      mail.deliver!
+      log.info "Done emailing"
+    }
 
     redirect back
   end
