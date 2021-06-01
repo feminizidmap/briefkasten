@@ -1,28 +1,10 @@
 # Briefkasten
 
-Small postbox app: fill out a form, send via email
+Small postbox app to report cases.
 
-## Setup
+Find all documentation on [tech.feminizidmap.org/docs/briefkasten/](https://tech.feminizidmap.org/docs/briefkasten/).
 
-``` bash
-$ cp env.sample .env
-```
-Edit the values in the .env and then `source .env`. Install dependencies and start server with:
+## Sponsorship
 
-``` bash
-$ bundle install && bundle exec thin start
-```
-
-To start mailcatcher in development for testing emails run
-
-``` bash
-$ bundle exec mailcatcher
-```
-
-## Docker
-
-There is a Dockerfile you can use, a potential docker-compose.yml could look like this
-
-``` yaml
-
-```
+[![BMBF logo](backend/public/assets/bmbf-logo.svg)](https://www.bmbf.de/)
+[![Prototypefund](backend/public/assets/logo-prototype.svg)](https://prototypefund.de/)
