@@ -1,4 +1,4 @@
-require 'rspec'
+xrequire 'rspec'
 require 'rack/test'
 require 'rspec-html-matchers'
 
@@ -22,7 +22,6 @@ RSpec::Matchers.define(:redirect_to) do |url|
     response.status == 302 && response.location.match(url)
   end
 end
-
 
 Mail.defaults do
   delivery_method :test

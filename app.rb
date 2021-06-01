@@ -42,7 +42,7 @@ class App < Sinatra::Base
     Thread.abort_on_exception = true
     Thread.new  {
       log.info "Starting thread to write email"
-      email_body = erb :mailer, locals: {name: name}
+      email_body = erb :mailer, locals: { name: name }
       mail = Mail.new do
         from    "#{ENV['EMAIL_FROM']}"
         to      "#{ENV['EMAIL_TO']}"
@@ -50,6 +50,7 @@ class App < Sinatra::Base
         body    email_body
       end
       mail.delivery_method :sendmail
+      #mail.delivery_method :smtp, address: "localhost", port: 1025
       mail.deliver!
       log.info "Done emailing"
     }
