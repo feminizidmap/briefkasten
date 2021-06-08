@@ -1,4 +1,9 @@
 form:
   labels:
-    name: Ganzer Name
+    source: Quelle
+    source_description: Bitte kopiere den link zur Quelle hier rein oder schreibe "privat"!
+    comment: Kommentar
+    contact: E-Mail-Adresse
+    contact_description: Bitte hinterlasse deine E-Mail-Adresse, wenn du möchtest!
+    agreement: Hiermit ...blablabla
     submit: Senden

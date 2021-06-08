@@ -1,4 +1,9 @@
 form:
   labels:
-    name: Full name
+    source: Source
+    source_description: Please copy the link or write "private"!
+    comment: Comment
+    contact: E-mail
+    contact_description: Please leave your e-mail-address if you like!
+    agreement: .blabla I agree!
     submit: Send

@@ -1,14 +1,28 @@
-<h1>Report a case</h1>
+<p>Hello! Thank you for supporting our work </p>
+
 
 <form action="/send" method="POST">
   <label>
-    <p><%= t.form.labels.name %>
-    <input type="text" name="user_name" />
+    <%= t.form.labels.source %>
+    <input type="text" name="source" required />
+    <p><%=t.form.labels.source_description %></p>
   </label>
 
   <label>
-      <p><%= t.form.labels.address %>
-      <input type="text" name="user_address" />
+    <%= t.form.labels.comment %>
+    <textarea name="comment"></textarea>
+  </label> <br>
+
+  <label>
+    <%= t.form.labels.contact %>
+    <input type="email" name="contact" />
+    <p><%=t.form.labels.contact_description %></p>
   </label>
+
+  <label>
+    <%= t.form.labels.agreement %>
+    <input type="checkbox" name="agreement" required />
+  </label>
+
   <button type="submit"><%= t.form.labels.submit %></button>
 </form>
