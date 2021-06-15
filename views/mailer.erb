@@ -2,6 +2,20 @@ Hello!
 
 This is the phantastic Email Template!
 
-Today's field is:  <%= name %>, <%= user_address %>
+Today's field is:
+
+<% fields.each do |key, value| %>
+    <% if value != "" then %>- <%= key %>: <%= value %><% end %>
+
+<% end %>
+
+
+# About the victim
+
+<%= fields['first_name_v'] %>
+
+<%= fields['last_name_v'] %>
+
+<%= fields['age_v'] %>
 
 Have a great day!
