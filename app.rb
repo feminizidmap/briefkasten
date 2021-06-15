@@ -52,8 +52,16 @@ class App < Sinatra::Base
        mail = Mail.new do
          from    "#{ENV['EMAIL_FROM']}"
          to      "#{ENV['EMAIL_TO']}"
-         subject "[#{ENV['APP_NAME']}] You got mail!"
-         body    email_body
+         subject "[#{ENV['APP_NAME']}] A case was reported!"
+
+         text_part do
+           body email_body
+         end
+
+         html_part do
+           content_type 'text/html; charset=UTF-8'
+           body email_body
+         end
        end
        mail.delivery_method :sendmail
       # use this but also run `bundle exec mailcatcher` in another terminal window
