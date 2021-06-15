@@ -13,5 +13,11 @@ form:
     comment: Kommentar
     contact: E-Mail-Adresse
     contact_description: Können wir dich kontaktieren, falls wir mehr Information brauchen? Wenn ja, gib bitte deine Kontaktinformationen an.
-    agreement: Ich stimme der Datenschutzvereinbarung zu. 
+    agreement: Ich stimme der Datenschutzvereinbarung zu.
     submit: Senden
+
+sections:
+  intro: Hallo! <br> Test
+  victim: "Details über das Opfer:"
+  case: "Details über die Tat:"
+  perpetrator: "Details über den Täter:"

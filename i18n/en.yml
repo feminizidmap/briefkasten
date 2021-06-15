@@ -15,3 +15,9 @@ form:
     contact_description: Can we contact you in case we need more information? In case we can, please provide us with contact details.
     agreement: I agree with the data protection agreement.
     submit: Send
+
+sections:
+  intro: Hello!<br>Thank you for supporting our work! If you want to report a case that happened in Germany, please fill in the form and send it to us!
+  victim: "Details about the victim:"
+  case: "Details about the case:"
+  perpetrator: "Details about the perpetrator:"
