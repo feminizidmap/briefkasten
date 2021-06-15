@@ -1,9 +1,17 @@
 form:
   labels:
+    date: date
+    date_description: When did the case happen?
     source: Source
-    source_description: Please copy the link or write "private"!
+    source_description: Where did you find the information about the case? Please copy the link or write "private"!
+    first_name_v: first name
+    last_name_v: surname
+    age_v: age
+    first_name_p: first name
+    last_name_p: surname
+    age_p: age
     comment: Comment
     contact: E-mail
-    contact_description: Please leave your e-mail-address if you like!
-    agreement: .blabla I agree!
+    contact_description: Can we contact you in case we need more information? In case we can, please provide us with contact details.
+    agreement: I agree with the data protection agreement.
     submit: Send

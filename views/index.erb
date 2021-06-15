@@ -1,28 +1,71 @@
-<p>Hello! Thank you for supporting our work </p>
+<p>Hello!<br> Thank you for supporting our work! If you want to report a case that happened in Germany, please fill in the form and send it to us! </p>
 
+<%#Wie kann das denn in die i18n-sache eingebaut werden?%>
 
 <form action="/send" method="POST">
+
+
+<label>
+  <p><%=t.form.labels.date_description %></p>
+  <%= t.form.labels.date %>
+  <input type="text" name="date" />
+</label> <br>
+
+<%#Hier nen datepicker einbauen!%>
+
   <label>
+    <p><%=t.form.labels.source_description %></p>
     <%= t.form.labels.source %>
     <input type="text" name="source" required />
-    <p><%=t.form.labels.source_description %></p>
-  </label>
+  </label> <br>
+
+<p>Details about the victim:</p>
+
+  <label>
+    <%= t.form.labels.first_name_v %>
+    <input type="text" name="first_name_v"/>
+    <%= t.form.labels.last_name_v %>
+    <input type="text" name="last_name_v"/>
+  </label> <br>
+
+  <label>
+    <%= t.form.labels.age_v %>
+    <input type="text" name="age_v"/>
+  </label> <br>
+
+  <%#Puh, wollen wir wirklich ALLE von Aleida vorgeschlagenen Felder anlegen??%>
+
+<p>Details about the case: ... </p>
+
+<p>Details about the perpetrator: </p>
+
+<label>
+  <%= t.form.labels.first_name_p %>
+  <input type="text" name="first_name_p"/>
+  <%= t.form.labels.last_name_p %>
+  <input type="text" name="last_name_p"/>
+</label> <br>
+
+<label>
+  <%= t.form.labels.age_p %>
+  <input type="text" name="age_p"/>
+</label> <br>
 
   <label>
     <%= t.form.labels.comment %>
     <textarea name="comment"></textarea>
   </label> <br>
 
-  <label>
+<label>
+  <p><%=t.form.labels.contact_description %></p>
     <%= t.form.labels.contact %>
     <input type="email" name="contact" />
-    <p><%=t.form.labels.contact_description %></p>
-  </label>
+</label> <br>
 
-  <label>
+<label>
     <%= t.form.labels.agreement %>
     <input type="checkbox" name="agreement" required />
-  </label>
+</label> <br>
 
   <button type="submit"><%= t.form.labels.submit %></button>
 </form>

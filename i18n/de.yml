@@ -1,9 +1,17 @@
 form:
   labels:
+    date: Datum
+    date_description: Wann ist der Fall passiert?
     source: Quelle
-    source_description: Bitte kopiere den link zur Quelle hier rein oder schreibe "privat"!
+    source_description: Woher hast du die Informationen zum Fall? Bitte kopiere den link zur Quelle hier rein oder schreibe "privat"!
+    first_name_v: Vorname
+    last_name_v: Nachname
+    age_v: Alter
+    first_name_p: Vorname
+    last_name_p: Nachname
+    age_p: Alter
     comment: Kommentar
     contact: E-Mail-Adresse
-    contact_description: Bitte hinterlasse deine E-Mail-Adresse, wenn du möchtest!
-    agreement: Hiermit ...blablabla
+    contact_description: Können wir dich kontaktieren, falls wir mehr Information brauchen? Wenn ja, gib bitte deine Kontaktinformationen an.
+    agreement: Ich stimme der Datenschutzvereinbarung zu. 
     submit: Senden
