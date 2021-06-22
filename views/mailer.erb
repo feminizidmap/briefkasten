@@ -1,21 +1,26 @@
-Hello!
+Hello you wonderful person! <3
 
-This is the phantastic Email Template!
+Thank you for doing the shift this week!
 
-Today's field is:
+Someone reported a case via our website. This is the information they put in:
+
 
 <% fields.each do |key, value| %>
     <% if value != "" then %>- <%= key %>: <%= value %><% end %>
 
 <% end %>
 
+If there is anything wrong or strange with this e-mail, please report it to our #webpage slack-channel!
 
-# About the victim
+Love,
+
+your briefkasten :)
+
+
+
 
 <%= fields['first_name_v'] %>
 
 <%= fields['last_name_v'] %>
 
 <%= fields['age_v'] %>
-
-Have a great day!
