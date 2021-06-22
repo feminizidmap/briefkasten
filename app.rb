@@ -53,15 +53,7 @@ class App < Sinatra::Base
          from    "#{ENV['EMAIL_FROM']}"
          to      "#{ENV['EMAIL_TO']}"
          subject "[#{ENV['APP_NAME']}] A case was reported!"
-
-         text_part do
-           body email_body
-         end
-
-         html_part do
-           content_type 'text/html; charset=UTF-8'
-           body email_body
-         end
+         body     email_body
        end
        mail.delivery_method :sendmail
       # use this but also run `bundle exec mailcatcher` in another terminal window
@@ -70,7 +62,10 @@ class App < Sinatra::Base
       log.info "Done emailing"
     }
 
-    redirect back
+    erb :byebye
+
+#Or just write it here directly? "Case Successfully Reported!" ?
+
   end
 
   error 403 do
