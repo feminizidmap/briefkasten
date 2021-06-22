@@ -21,3 +21,10 @@ sections:
   victim: "Details über das Opfer:"
   case: "Details über die Tat:"
   perpetrator: "Details über den Täter:"
+
+titles:
+  report_a_case: "Melde einen Fall"
+
+
+ui:
+  en_version: "English version"

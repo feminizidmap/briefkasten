@@ -21,3 +21,9 @@ sections:
   victim: "Details about the victim:"
   case: "Details about the case:"
   perpetrator: "Details about the perpetrator:"
+
+titles:
+  report_a_case: "Report a case"
+
+ui:
+  de_version: "Deutsche Version"

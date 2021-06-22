@@ -1,4 +1,4 @@
-<p><%=t.sections.intro %> </p>
+<h2><%= t.sections.intro %> </h2>
 
 <form action="/send" method="POST">
 
@@ -16,7 +16,7 @@
     <input type="text" name="source" required />
   </label> <br>
 
-<p><%=t.sections.victim %> </p>
+  <h3><%=t.sections.victim %> </h3>
 
   <label>
     <%= t.form.labels.first_name_v %>
@@ -32,9 +32,9 @@
 
   <%#Puh, wollen wir wirklich ALLE von Aleida vorgeschlagenen Felder anlegen??%>
 
-<p><%=t.sections.case %> </p>
+<h3><%=t.sections.case %> </h3>
 
-<p><%=t.sections.perpetrator %> </p>
+<h3><%=t.sections.perpetrator %> </h3>
 
 <label>
   <%= t.form.labels.first_name_p %>
@@ -63,6 +63,11 @@
     <%= t.form.labels.agreement %>
     <input type="checkbox" name="agreement" required />
 </label> <br>
+
+
+<a href="#foo">zeig her</a>
+
+<div id="foo" class="hidden">ich bin versteckt</div>
 
   <button type="submit"><%= t.form.labels.submit %></button>
 </form>

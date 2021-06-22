@@ -34,7 +34,7 @@ class App < Sinatra::Base
   end
 
   get '/:locale' do
-    erb :index
+    erb :index, locals: { language: params[:locale] }
   end
 
   post '/send' do
