@@ -1,73 +1,101 @@
-<h2><%= t.sections.intro %> </h2>
+<header>
+    <h2><%= t.sections.intro %></h2>
+    <p class="size-mid"><%= t.sections.intro_text %></p>
+</header>
 
-<form action="/send" method="POST">
+<form action="/<%= params[:locale]%>/send" method="POST">
+    <div class="form-wrap">
+        <p><%= t.form.labels.date_description %></p>
+        <label>
+            <span><%= t.form.labels.date %></span>
+            <input type="date" name="date" />
+        </label>
+    </div>
 
+    <div class="form-wrap">
+        <p><%= t.form.labels.source_description %></p>
+        <label>
+            <span><%= t.form.labels.source %> *</span>
+            <input type="text" name="source" required />
+        </label>
+    </div>
 
-<label>
-  <p><%=t.form.labels.date_description %></p>
-  <%= t.form.labels.date %>
-  <input type="date" name="date" />
-</label> <br>
+    <aside class="">
+        <div class="form-wrap">
+            <p><%= t.form.labels.additional_description %></p>
+            <a href="#additional-infos" class="btn-outline"><%= t.form.labels.additional %></a>
+        </div>
 
+        <div class="hidden form-frame" id="additional-infos">
+            <div>
+                <a href="#" class="btn-outline"><%= t.form.labels.additional_rm %></a>
+            </div>
+            <section>
+                <h4><%=t.sections.victim %></h4>
 
-  <label>
-    <p><%=t.form.labels.source_description %></p>
-    <%= t.form.labels.source %>
-    <input type="text" name="source" required />
-  </label> <br>
+                <label class="form-wrap">
+                    <span><%= t.form.labels.first_name_v %></span>
+                    <input type="text" name="first_name_v"/>
+                </label>
 
-  <h3><%=t.sections.victim %> </h3>
+                <label class="form-wrap">
+                    <span><%= t.form.labels.last_name_v %></span>
+                    <input type="text" name="last_name_v"/>
+                </label>
 
-  <label>
-    <%= t.form.labels.first_name_v %>
-    <input type="text" name="first_name_v"/>
-    <%= t.form.labels.last_name_v %>
-    <input type="text" name="last_name_v"/>
-  </label> <br>
+                <label class="form-wrap">
+                    <span><%= t.form.labels.age_v %></span>
+                    <input type="text" name="age_v"/>
+                </label>
+            </section>
 
-  <label>
-    <%= t.form.labels.age_v %>
-    <input type="text" name="age_v"/>
-  </label> <br>
+            <%#Puh, wollen wir wirklich ALLE von Aleida vorgeschlagenen Felder anlegen??%>
 
-  <%#Puh, wollen wir wirklich ALLE von Aleida vorgeschlagenen Felder anlegen??%>
+            <!-- <section>
+                 <h4><%=t.sections.case %></h4>
+                 </section> -->
 
-<h3><%=t.sections.case %> </h3>
+            <section>
+                <h4><%=t.sections.perpetrator %></h4>
 
-<h3><%=t.sections.perpetrator %> </h3>
+                <label class="form-wrap">
+                    <span><%= t.form.labels.first_name_p %></span>
+                    <input type="text" name="first_name_p"/>
+                </label>
+                <label class="form-wrap">
+                    <span><%= t.form.labels.last_name_p %></span>
+                    <input type="text" name="last_name_p"/>
+                </label>
 
-<label>
-  <%= t.form.labels.first_name_p %>
-  <input type="text" name="first_name_p"/>
-  <%= t.form.labels.last_name_p %>
-  <input type="text" name="last_name_p"/>
-</label> <br>
+                <label class="form-wrap">
+                    <span><%= t.form.labels.age_p %></span>
+                    <input type="text" name="age_p"/>
+                </label>
+            </section>
+            <div>
+    </aside>
 
-<label>
-  <%= t.form.labels.age_p %>
-  <input type="text" name="age_p"/>
-</label> <br>
+    <div class="form-wrap">
+        <p><%=t.form.labels.comment_description %></p>
+        <label>
+            <span><%= t.form.labels.comment %></span>
+            <textarea name="comment"></textarea>
+        </label>
+    </div>
 
-  <label>
-    <%= t.form.labels.comment %>
-    <textarea name="comment"></textarea>
-  </label> <br>
+    <div class="form-wrap">
+        <p><%=t.form.labels.contact_description %></p>
+        <label>
+            <span><%= t.form.labels.contact %></span>
+            <input type="email" name="contact" />
+        </label>
+    </div>
 
-<label>
-  <p><%=t.form.labels.contact_description %></p>
-    <%= t.form.labels.contact %>
-    <input type="email" name="contact" />
-</label> <br>
+    <label class="form-wrap-inline">
+        <input type="checkbox" name="agreement" required />
+        <span><%= t.form.labels.agreement %> *</span>
+    </label>
 
-<label>
-    <%= t.form.labels.agreement %>
-    <input type="checkbox" name="agreement" required />
-</label> <br>
-
-
-<a href="#foo">zeig her</a>
-
-<div id="foo" class="hidden">ich bin versteckt</div>
-
-  <button type="submit"><%= t.form.labels.submit %></button>
+    <button type="submit"><%= t.form.labels.submit %></button>
+    <p class="form-mandatory"><%= t.form.labels.mandatory %></p>
 </form>

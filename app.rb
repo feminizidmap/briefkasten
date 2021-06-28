@@ -22,6 +22,7 @@ class App < Sinatra::Base
   register Sinatra::Cors
 
   set :root, __dir__
+  set :static, true
   set :allow_origin, "#{ENV['ALLOW_LIST']}"
   set :allow_methods, "GET,HEAD,POST"
   set :allow_headers, "content-type"
@@ -37,7 +38,7 @@ class App < Sinatra::Base
     erb :index, locals: { language: params[:locale] }
   end
 
-  post '/send' do
+  post '/:locale/send' do
     log.info "Request hit /send"
 
     clean_params = {}
@@ -62,10 +63,7 @@ class App < Sinatra::Base
       log.info "Done emailing"
     }
 
-    erb :byebye
-
-#Or just write it here directly? "Case Successfully Reported!" ?
-
+    erb :byebye, locals: { language: params[:locale] }
   end
 
   error 403 do

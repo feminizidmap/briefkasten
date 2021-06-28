@@ -12,19 +12,30 @@ form:
     age_p: Alter
     comment: Kommentar
     contact: E-Mail-Adresse
+    comment_description: Gibt es Dinge auf die wir besonders achten sollten oder sonstige Anmerkungen?
     contact_description: Können wir dich kontaktieren, falls wir mehr Information brauchen? Wenn ja, gib bitte deine Kontaktinformationen an.
-    agreement: Ich stimme der Datenschutzvereinbarung zu.
+    agreement: Ich stimme der <a href="https://feminizidmap.org/dataprotection">Datenschutzvereinbarung</a> zu.
+    additional_description: Hier kannst du zusätzliche Informationen angeben.
+    additional: Zusätzliche Felder anzeigen
+    additional_rm: Felder ausblenden
+    mandatory: Mit * gekennzeichnete Felder müssen ausgefüllt werden.
     submit: Senden
 
 sections:
-  intro: Hallo! <br> Test
+  intro: Melde uns einen Fall
+  intro_text: Unterstütze unsere Arbeit und informiere uns über Fälle, die in Deutschland passiert sind.
   victim: "Details über das Opfer:"
   case: "Details über die Tat:"
   perpetrator: "Details über den Täter:"
 
+byebye:
+  title: Fall erfolgreich meldet!
+  text: Danke für deine Unterstützung!
+  main: Zurück zur Hauptseite
+  another: Weiteren Fall melden
+
 titles:
   report_a_case: "Melde einen Fall"
-
 
 ui:
   en_version: "English version"

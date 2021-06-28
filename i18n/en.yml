@@ -1,6 +1,6 @@
 form:
   labels:
-    date: date
+    date: Date
     date_description: When did the case happen?
     source: Source
     source_description: Where did you find the information about the case? Please copy the link or write "private"!
@@ -11,19 +11,31 @@ form:
     last_name_p: surname
     age_p: age
     comment: Comment
+    comment_description: Are there things we should pay attention to or further remarks?
     contact: E-mail
     contact_description: Can we contact you in case we need more information? In case we can, please provide us with contact details.
     agreement: I agree with the data protection agreement.
+    additional_description: You can provide additional information here.
+    additional: Show additional fields
+    additional_rm: Hide fields
+    mandatory: Fields marked with * have to be filled in.
     submit: Send
 
 sections:
-  intro: Hello!<br>Thank you for supporting our work! If you want to report a case that happened in Germany, please fill in the form and send it to us!
+  intro: Report a case
+  intro_text: Support our work and tell us about cases that happened in Germany.
   victim: "Details about the victim:"
   case: "Details about the case:"
   perpetrator: "Details about the perpetrator:"
 
 titles:
   report_a_case: "Report a case"
+
+byebye:
+  title: Case successfully reported!
+  text: Thank you for your support!
+  main: Back to the main page
+  another: Report another case
 
 ui:
   de_version: "Deutsche Version"
