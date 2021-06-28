@@ -1,6 +1,6 @@
 FROM ruby:3.0.1-slim-buster
 
-RUN apt-get update -qq && apt-get install -y sendmail git build-essential
+RUN apt-get update -qq && apt-get install -y sendmail git build-essential libsqlite3-dev
 
 ENV APP_ROOT /var/www/briefkasten
 RUN mkdir -p $APP_ROOT
