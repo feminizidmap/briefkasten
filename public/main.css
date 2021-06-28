@@ -1,0 +1,82 @@
+.hidden {
+  display: none;
+}
+#additional-infos:target {
+  display: block;
+}
+
+.form-wrap, .form-wrap-inline {
+  display: block;
+  margin: 0.5rem 0 3.5rem;
+}
+
+header {
+  margin-bottom: 4rem;
+}
+
+.form-wrap input,
+.form-wrap textarea {
+  font: inherit;
+  padding: .3em;
+  display: block;
+}
+
+.form-frame .btn-outline {
+  margin: 2rem 0;
+  float: right;
+}
+
+.form-wrap p {
+  margin-bottom: .5rem;
+}
+
+.form-wrap span {
+  font-size: 0.9rem;
+  color: #696F7E;
+}
+
+button[type=submit] {
+  font: inherit;
+  padding: .6rem 1.4rem;
+  background-color: #9F00FF;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity 120ms ease-in-out;
+}
+
+button[type=submit]:hover,
+button[type=submit]:active {
+  opacity: 0.8;
+}
+
+.form-frame {
+  padding: 0 2rem;
+  border: solid #696F7E 1px;
+  border-radius: 2px;
+  margin-bottom: 4rem;
+}
+
+.btn-outline {
+  text-decoration: none !important;
+  padding: .6rem 1.4rem;
+  border: 1px solid #696F7E;
+  border-radius: 4px;
+  display: inline-block;
+}
+.btn-outline:hover,
+.btn-outline:active {
+  border-color: #9F00FF;
+}
+
+.form-mandatory {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  color: #696F7E;
+}
+
+.size-mid {
+  font-size: 1.6rem;
+  font-family: "Stabil", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+}
